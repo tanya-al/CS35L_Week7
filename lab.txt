@@ -1,0 +1,16 @@
+CS 35L Lab Report Week 7
+Tanya Al-Rehani
+Write the tr2b.c and tr2u.c using getchar/putchar and read/write
+respectively. To get tr2u, replace not only getchar and puthcar, but use &c in
+the read and write functions.
+Use the command tr -dc A-Za-z0-9 </dev/urandom | head -c 5000000 >randinput to
+create a long enough text file to then input into the program using strace -o
+strace_buf_output ./tr2b 'a' 'b' <randinput, strace -o strace_unbuf_output
+./tr2u 'a' 'b' <randinput, strace -o strace_buf_output ./tr2b 'a' 'b' <randinput
+> tr2boutput.txt, strace -o strace_unbuf_output ./tr2u 'a' 'b' <randinput >
+tr2uoutput.txt.
+Next, use time ./tr2b 'a' 'b' < randinput to get the time of the execution,
+which is real 0m3.908s user 0m0.279s and sys 0m0.055s. time ./tr2u 'a' 'b' <
+randinput gives us real 0m9.327s user 0m0.335s and sys 0m5.825s. We compare the
+sys times (the times used by each program to ask for system calls) and find that
+tr2b beats tr2u by more than 5 seconds. 

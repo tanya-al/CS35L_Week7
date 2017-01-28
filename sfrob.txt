@@ -1,0 +1,16 @@
+CS 35L Homework Week 7
+Tanya Al-Rehani
+Running ./randWords 1000 | time ./sfrobu takes 0.08 seconds and ./randWords 1000
+| time ~/assn5/sfrob takes 0.01 seconds. ./randWords 1000 | time ./sfrobs takes
+0 seconds. For 10000 words, sfrobu takes 0m0.073s, sfrob takes 0m0.002s, and
+sfrobs takes 0m0.008s. For 1000000 words, sfrobu takes 0m6.582s, sfrob takes
+0m0.023s,and sfrobs takes 0m0.109s. All time values are using the time for
+sys calls, not the total time.
+For 1000000 words, sfrobu had 18673297 (about 18000000) comparisons.
+For 10000 words, sfrobu had 120515 (about 120000) comparisons. 
+For 1000 words, sfrobu had 8707 (about 9000) comparisons.
+With an input of 10^3, we had an output close to 10^3. For an input of 10^4, we
+had an output of about 10^5. For an input of 10^6, we had an output of about
+10^7. By this reasoning, we can assume that as the number of words grows at
+least larger than 10^3, our number of comparisons will be approx. one order of
+magnitude higher than our number of input words.
